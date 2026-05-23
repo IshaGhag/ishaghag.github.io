@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isha Ghag ✦</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#FFD6E0;
+  --mint:#C8F0DC;
+  --lavender:#DDD6F3;
+  --peach:#FFE5CC;
+  --sky:#C8E6F5;
+  --yellow:#FFF3B0;
+  --coral:#FF8FA3;
+  --purple:#7C6FCD;
+  --green:#3D9970;
+  --ink:#1A1035;
+  --ink-soft:#4A4568;
+  --white:#FFFDF9;
+  --border:rgba(26,16,53,0.1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
+
+/* smooth scroll offset */
+#projects,#about,#certifications,#contact{scroll-margin-top:68px}
+
+/* ── CURSOR DOT ── */
+.cursor{width:12px;height:12px;background:var(--coral);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s,background 0.2s;mix-blend-mode:multiply}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:68px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;
+  background:rgba(255,253,249,0.88);backdrop-filter:blur(14px);
+  border-bottom:2px solid var(--border);
+}
+.nav-logo{
+  font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;
+  color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:0.4rem;
+}
+.logo-dot{
+  width:10px;height:10px;border-radius:50%;background:var(--coral);
+  display:inline-block;animation:blink 2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{transform:scale(1)}50%{transform:scale(1.4)}}
+.nav-links{display:flex;gap:0.5rem;list-style:none}
+.nav-links a{
+  text-decoration:none;color:var(--ink-soft);font-size:0.82rem;font-weight:500;
+  padding:0.4rem 0.9rem;border-radius:99px;border:1.5px solid transparent;
+  transition:all 0.2s;
+}
+.nav-links a:hover{background:var(--pink);border-color:var(--coral);color:var(--ink)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;padding-top:68px;
+  background:linear-gradient(160deg,var(--pink) 0%,var(--lavender) 40%,var(--mint) 100%);
+  display:flex;flex-direction:column;justify-content:center;
+  padding-left:3rem;padding-right:3rem;
+  position:relative;overflow:hidden;
+}
+/* floating blobs */
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:0.55;pointer-events:none}
+.blob1{width:380px;height:380px;background:var(--peach);top:-80px;right:5%;animation:float1 7s ease-in-out infinite}
+.blob2{width:280px;height:280px;background:var(--sky);bottom:60px;right:25%;animation:float2 9s ease-in-out infinite}
+.blob3{width:220px;height:220px;background:var(--yellow);bottom:-40px;left:10%;animation:float1 8s ease-in-out infinite reverse}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-24px) rotate(5deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(20px) rotate(-4deg)}}
+
+.hero-content{position:relative;z-index:2;max-width:860px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);
+  border:1.5px solid rgba(255,255,255,0.9);border-radius:99px;
+  padding:0.35rem 1rem;font-size:0.78rem;font-weight:600;color:var(--purple);
+  margin-bottom:1.75rem;letter-spacing:0.02em;
+}
+.hero-badge span{width:7px;height:7px;border-radius:50%;background:#3D9970;display:inline-block;animation:blink 2s ease-in-out infinite}
+h1{
+  font-family:'Fraunces',serif;font-weight:700;
+  font-size:clamp(3.5rem,8vw,7.5rem);line-height:1;
+  letter-spacing:-0.03em;color:var(--ink);margin-bottom:0.4rem;
+}
+h1 .wave{display:inline-block;animation:wave 2.5s ease-in-out infinite}
+@keyframes wave{0%,100%{transform:rotate(0deg)}25%{transform:rotate(18deg)}75%{transform:rotate(-8deg)}}
+.hero-subtitle{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+  font-size:clamp(1.4rem,3vw,2.2rem);color:var(--purple);
+  margin-bottom:1.5rem;letter-spacing:-0.01em;
+}
+.hero-desc{
+  font-size:1.05rem;color:var(--ink-soft);max-width:500px;
+  line-height:1.75;margin-bottom:2.5rem;font-weight:400;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-main{
+  background:var(--ink);color:var(--white);padding:0.8rem 2rem;
+  border-radius:99px;text-decoration:none;font-size:0.9rem;font-weight:600;
+  transition:transform 0.2s,box-shadow 0.2s;display:inline-block;
+  box-shadow:0 4px 20px rgba(26,16,53,0.25);
+}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(26,16,53,0.3)}
+.btn-ghost{
+  background:rgba(255,255,255,0.7);color:var(--ink);padding:0.8rem 2rem;
+  border-radius:99px;text-decoration:none;font-size:0.9rem;font-weight:600;
+  border:2px solid rgba(26,16,53,0.15);backdrop-filter:blur(8px);
+  transition:all 0.2s;display:inline-block;
+}
+.btn-ghost:hover{background:white;border-color:var(--purple)}
+
+.hero-stats{
+  display:flex;gap:2.5rem;flex-wrap:wrap;
+}
+.hstat{background:rgba(255,255,255,0.65);backdrop-filter:blur(10px);
+  border:1.5px solid rgba(255,255,255,0.9);border-radius:16px;
+  padding:1rem 1.5rem;text-align:center;min-width:110px;
+}
+.hstat-n{font-family:'Fraunces',serif;font-weight:700;font-size:2rem;color:var(--ink);line-height:1}
+.hstat-l{font-size:0.72rem;color:var(--ink-soft);font-weight:500;margin-top:0.2rem}
+
+/* deco hand-drawn circle on hero */
+.hero-deco{
+  position:absolute;right:3rem;top:50%;transform:translateY(-50%);
+  width:340px;height:340px;z-index:1;opacity:0.5;
+}
+@media(max-width:900px){.hero-deco{display:none}}
+
+/* ── SKILLS BAND ── */
+.skills-band{
+  background:var(--ink);padding:1.25rem 3rem;
+  display:flex;align-items:center;gap:2rem;flex-wrap:wrap;
+  border-top:2px solid var(--border);border-bottom:2px solid var(--border);
+}
+.band-label{font-family:'Caveat',cursive;font-size:1.1rem;color:var(--coral);white-space:nowrap}
+.band-tags{display:flex;gap:0.6rem;flex-wrap:wrap}
+.band-tag{
+  font-size:0.75rem;font-weight:600;padding:0.3rem 0.9rem;border-radius:99px;
+  letter-spacing:0.02em;
+}
+.bt-pink{background:var(--pink);color:var(--ink)}
+.bt-mint{background:var(--mint);color:var(--ink)}
+.bt-lav{background:var(--lavender);color:var(--ink)}
+.bt-peach{background:var(--peach);color:var(--ink)}
+.bt-sky{background:var(--sky);color:var(--ink)}
+
+/* ── SECTIONS ── */
+.sec{padding:6rem 3rem;border-top:2px solid var(--border)}
+.sec-pink{background:linear-gradient(135deg,#FFF5F7 0%,#FFF0F5 100%)}
+.sec-mint{background:linear-gradient(135deg,#F0FBF4 0%,#E8F8F0 100%)}
+.sec-lav{background:linear-gradient(135deg,#F5F3FF 0%,#EEF0FF 100%)}
+.sec-peach{background:linear-gradient(135deg,#FFF8F2 0%,#FFF3E8 100%)}
+
+.sec-tag{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-family:'Caveat',cursive;font-size:1.15rem;color:var(--purple);
+  margin-bottom:0.75rem;
+}
+.sec-tag::before{content:'✦';font-size:0.9rem;color:var(--coral)}
+h2{
+  font-family:'Fraunces',serif;font-weight:700;
+  font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:-0.03em;
+  color:var(--ink);line-height:1.05;margin-bottom:3rem;
+}
+
+/* ── PROJECTS ── */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.proj-card{
+  background:white;border:2px solid var(--border);border-radius:20px;
+  padding:2rem;transition:transform 0.2s,box-shadow 0.2s;
+  position:relative;overflow:hidden;cursor:default;
+}
+.proj-card::before{
+  content:'';position:absolute;inset:0;opacity:0;transition:opacity 0.2s;
+  border-radius:18px;
+}
+.proj-card:nth-child(1)::before{background:linear-gradient(135deg,rgba(255,214,224,0.4),rgba(221,214,243,0.4))}
+.proj-card:nth-child(2)::before{background:linear-gradient(135deg,rgba(200,240,220,0.4),rgba(200,230,245,0.4))}
+.proj-card:nth-child(3)::before{background:linear-gradient(135deg,rgba(255,229,204,0.4),rgba(255,243,176,0.4))}
+.proj-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(26,16,53,0.12)}
+.proj-card:hover::before{opacity:1}
+.proj-emoji{font-size:2.5rem;margin-bottom:1rem;display:block}
+.proj-year{font-size:0.72rem;font-weight:600;color:var(--purple);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.5rem}
+.proj-name{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:0.75rem;line-height:1.1}
+.proj-desc{font-size:0.875rem;color:var(--ink-soft);line-height:1.7;margin-bottom:1.25rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.proj-tag{
+  font-size:0.7rem;font-weight:600;padding:0.2rem 0.65rem;
+  border-radius:99px;background:var(--lavender);color:var(--purple);
+}
+.proj-card:nth-child(2) .proj-tag{background:var(--mint);color:var(--green)}
+.proj-card:nth-child(3) .proj-tag{background:var(--peach);color:#C05C00}
+
+/* ── ABOUT ── */
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-text{font-size:1rem;color:var(--ink-soft);line-height:1.85}
+.about-text p+p{margin-top:1.25rem}
+.about-text strong{color:var(--ink);font-weight:600}
+.about-highlight{
+  background:var(--yellow);border-radius:8px;padding:1.25rem 1.5rem;
+  margin-top:2rem;font-family:'Caveat',cursive;font-size:1.2rem;
+  color:var(--ink);border-left:4px solid #F5C518;line-height:1.5;
+}
+
+.edu-stack{display:flex;flex-direction:column;gap:1rem}
+.edu-card{
+  background:white;border:2px solid var(--border);border-radius:16px;
+  padding:1.25rem 1.5rem;transition:border-color 0.2s;
+}
+.edu-card:hover{border-color:var(--purple)}
+.edu-year{font-size:0.7rem;font-weight:600;color:var(--purple);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem}
+.edu-deg{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:0.2rem}
+.edu-sch{font-size:0.82rem;color:var(--ink-soft);margin-bottom:0.5rem}
+.edu-score{
+  display:inline-flex;align-items:center;gap:0.35rem;
+  background:var(--mint);color:var(--green);
+  font-size:0.72rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;
+}
+.edu-score::before{content:'★';font-size:0.65rem}
+
+/* ── CERTS ── */
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.cert-card{
+  background:white;border:2px solid var(--border);border-radius:16px;
+  padding:1.5rem;transition:all 0.2s;position:relative;overflow:hidden;
+}
+.cert-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:99px 99px 0 0;
+}
+.cert-card:nth-child(1)::after{background:var(--coral)}
+.cert-card:nth-child(2)::after{background:var(--purple)}
+.cert-card:nth-child(3)::after{background:var(--green)}
+.cert-card:nth-child(4)::after{background:#F5A623}
+.cert-card:nth-child(5)::after{background:#4AAFC9}
+.cert-card:nth-child(6)::after{background:#E04E8A}
+.cert-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(26,16,53,0.1)}
+.cert-icon{font-size:1.75rem;margin-bottom:0.6rem;display:block}
+.cert-name{font-size:0.88rem;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:0.25rem}
+.cert-org{font-size:0.75rem;color:var(--ink-soft)}
+
+/* ── CONTACT ── */
+.contact-inner{max-width:680px;margin:0 auto;text-align:center}
+.contact-inner h2{margin-bottom:1rem}
+.contact-sub{font-size:1rem;color:var(--ink-soft);line-height:1.7;margin-bottom:2.5rem}
+.contact-cards{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.contact-card{
+  background:white;border:2px solid var(--border);border-radius:16px;
+  padding:1.25rem 1.75rem;text-decoration:none;color:var(--ink);
+  font-weight:600;font-size:0.9rem;display:flex;align-items:center;gap:0.6rem;
+  transition:all 0.2s;
+}
+.contact-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(26,16,53,0.12)}
+.contact-card:nth-child(1):hover{background:var(--pink);border-color:var(--coral)}
+.contact-card:nth-child(2):hover{background:var(--sky);border-color:#4AAFC9}
+.contact-card:nth-child(3):hover{background:var(--lavender);border-color:var(--purple)}
+.contact-note{
+  margin-top:2rem;font-family:'Caveat',cursive;font-size:1.15rem;color:var(--ink-soft);
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);color:rgba(255,255,255,0.45);
+  padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;
+  font-size:0.8rem;flex-wrap:wrap;gap:1rem;
+}
+.footer-love{color:rgba(255,255,255,0.7);font-family:'Caveat',cursive;font-size:1rem}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .projects-grid{grid-template-columns:1fr 1fr}
+  .about-layout{grid-template-columns:1fr;gap:3rem}
+  .certs-grid{grid-template-columns:1fr 1fr}
+  .sec{padding:4rem 2rem}
+  nav{padding:0 1.5rem}
+}
+@media(max-width:600px){
+  .nav-links a span{display:none}
+  .projects-grid{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr}
+  h1{font-size:3rem}
+  .hero{padding-left:1.5rem;padding-right:1.5rem}
+  nav{padding:0 1rem}
+  .nav-links{gap:0.2rem}
+  .nav-links a{padding:0.35rem 0.6rem;font-size:0.78rem}
+  footer{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <a href="#home" class="nav-logo"><span class="logo-dot"></span> Isha Ghag</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <svg class="hero-deco" viewBox="0 0 340 340" fill="none">
+    <ellipse cx="170" cy="170" rx="150" ry="150" stroke="rgba(124,111,205,0.3)" stroke-width="2.5" stroke-dasharray="12 8"/>
+    <ellipse cx="170" cy="170" rx="110" ry="110" stroke="rgba(255,143,163,0.4)" stroke-width="2"/>
+    <circle cx="170" cy="170" r="60" fill="rgba(255,255,255,0.35)" stroke="rgba(124,111,205,0.2)" stroke-width="2"/>
+    <text x="170" y="158" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="rgba(26,16,53,0.5)" font-style="italic">code &</text>
+    <text x="170" y="184" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="rgba(26,16,53,0.5)" font-style="italic">create</text>
+    <circle cx="60" cy="80" r="8" fill="rgba(255,214,224,0.8)" stroke="rgba(255,143,163,0.5)" stroke-width="1.5"/>
+    <circle cx="290" cy="260" r="6" fill="rgba(200,240,220,0.8)" stroke="rgba(61,153,112,0.5)" stroke-width="1.5"/>
+    <circle cx="300" cy="90" r="10" fill="rgba(255,229,204,0.8)" stroke="rgba(200,160,100,0.4)" stroke-width="1.5"/>
+    <circle cx="50" cy="270" r="7" fill="rgba(221,214,243,0.8)" stroke="rgba(124,111,205,0.4)" stroke-width="1.5"/>
+  </svg>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span></span> Open to opportunities · Mumbai</div>
+    <h1>Hi, I'm Isha <span class="wave">👋</span></h1>
+    <p class="hero-subtitle">Full-Stack Developer & NLP Enthusiast</p>
+    <p class="hero-desc">I'm a CS postgraduate from Mumbai who loves building web apps and intelligent tools. Clean code, thoughtful interfaces, and problems worth solving — that's my thing.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-main">See my work ✦</a>
+      <a href="mailto:ishaghag21@gmail.com" class="btn-ghost">Say hello 💌</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n">8.39</div><div class="hstat-l">MSc CGPA</div></div>
+      <div class="hstat"><div class="hstat-n">9.00</div><div class="hstat-l">BSc CGPA</div></div>
+      <div class="hstat"><div class="hstat-n">6</div><div class="hstat-l">Certifications</div></div>
+      <div class="hstat"><div class="hstat-n">2</div><div class="hstat-l">Projects</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS BAND -->
+<div class="skills-band">
+  <span class="band-label">My stack ✨</span>
+  <div class="band-tags">
+    <span class="band-tag bt-pink">JavaScript</span>
+    <span class="band-tag bt-mint">Python</span>
+    <span class="band-tag bt-lav">REST APIs</span>
+    <span class="band-tag bt-peach">HTML5 / CSS3</span>
+    <span class="band-tag bt-sky">NLP · spaCy</span>
+    <span class="band-tag bt-pink">AWS</span>
+    <span class="band-tag bt-mint">Git & GitHub</span>
+    <span class="band-tag bt-lav">MERN Stack</span>
+    <span class="band-tag bt-peach">Kotlin</span>
+    <span class="band-tag bt-sky">Java</span>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section class="sec sec-lav" id="projects">
+  <div class="sec-tag">what I've built</div>
+  <h2>Projects 🛠️</h2>
+  <div class="projects-grid">
+    <div class="proj-card">
+      <span class="proj-emoji">📄</span>
+      <p class="proj-year">2025</p>
+      <h3 class="proj-name">Text Summarizer</h3>
+      <p class="proj-desc">NLP-powered tool that condenses long documents, PDFs, and webpages into crisp summaries. Uses extractive techniques to keep what matters — cuts reading time by ~70%.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">NLTK</span>
+        <span class="proj-tag">spaCy</span>
+        <span class="proj-tag">PDF Parsing</span>
+      </div>
+    </div>
+    <div class="proj-card">
+      <span class="proj-emoji">🍳</span>
+      <p class="proj-year">2024</p>
+      <h3 class="proj-name">Chef At Home</h3>
+      <p class="proj-desc">Recipe search & meal-planning web app with dynamic ingredient scaling by serving size. Fully responsive, step-by-step instructions — built in pure Vanilla JS, no frameworks.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Vanilla JS</span>
+        <span class="proj-tag">Fetch API</span>
+        <span class="proj-tag">HTML5</span>
+        <span class="proj-tag">CSS3</span>
+      </div>
+    </div>
+    <div class="proj-card">
+      <span class="proj-emoji">🤖</span>
+      <p class="proj-year">2025–2026</p>
+      <h3 class="proj-name">Edge AI Research</h3>
+      <p class="proj-desc">Academic research on running ML inference at edge devices — reducing latency and cloud dependency for IoT & real-time applications. Explored model-size vs accuracy tradeoffs.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Machine Learning</span>
+        <span class="proj-tag">Edge Computing</span>
+        <span class="proj-tag">IoT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec sec-pink" id="about">
+  <div class="sec-tag">who I am</div>
+  <h2>About Me 🌸</h2>
+  <div class="about-layout">
+    <div>
+      <div class="about-text">
+        <p>Hey! I'm Isha — a <strong>Computer Science postgraduate</strong> from Mumbai with an MSc (8.39 CGPA) and BSc (9.00 CGPA) from Thakur College, Mumbai University.</p>
+        <p>I love building things that are <strong>practical and fun to use</strong>. Whether it's a web app that helps people cook better at home or a tool that saves hours of reading time — I care about the end experience.</p>
+        <p>My work lives at the crossroads of <strong>frontend development and data intelligence</strong>. Getting into NLP was a turning point — realising machines can actually understand meaning, not just text.</p>
+        <p>When I'm not coding, I'm curious about <strong>Edge AI</strong> — the idea that smart models can run right where the data is, without a cloud in sight.</p>
+        <p>I'm actively <strong>looking for developer or analyst roles</strong> in Mumbai where I can jump in and contribute from day one!</p>
+      </div>
+      <div class="about-highlight">
+        "I write code that actually works — and interfaces people actually enjoy." ✨
+      </div>
+    </div>
+    <div>
+      <p style="font-family:'Caveat',cursive;font-size:1.1rem;color:var(--purple);margin-bottom:1rem">My education journey 🎓</p>
+      <div class="edu-stack">
+        <div class="edu-card">
+          <p class="edu-year">2024 – 2026</p>
+          <p class="edu-deg">MSc in Computer Science</p>
+          <p class="edu-sch">Thakur College, Mumbai University</p>
+          <span class="edu-score">CGPA 8.39 / 10</span>
+        </div>
+        <div class="edu-card">
+          <p class="edu-year">2021 – 2024</p>
+          <p class="edu-deg">BSc in Computer Science</p>
+          <p class="edu-sch">Thakur College, Mumbai University</p>
+          <span class="edu-score">CGPA 9.00 / 10</span>
+        </div>
+        <div class="edu-card">
+          <p class="edu-year">2021</p>
+          <p class="edu-deg">HSC — Science Stream</p>
+          <p class="edu-sch">Sathaye College</p>
+          <span class="edu-score">85.33%</span>
+        </div>
+        <div class="edu-card">
+          <p class="edu-year">2019</p>
+          <p class="edu-deg">SSC</p>
+          <p class="edu-sch">AGHS</p>
+          <span class="edu-score">94.40%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="sec sec-mint" id="certifications">
+  <div class="sec-tag">credentials</div>
+  <h2>Certifications 📜</h2>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <span class="cert-icon">🌐</span>
+      <p class="cert-name">The Complete Full Stack Web Development Bootcamp</p>
+      <p class="cert-org">Dr. Angela Yu · Udemy</p>
+    </div>
+    <div class="cert-card">
+      <span class="cert-icon">💻</span>
+      <p class="cert-name">Full Stack Development</p>
+      <p class="cert-org">SDAC</p>
+    </div>
+    <div class="cert-card">
+      <span class="cert-icon">📱</span>
+      <p class="cert-name">Android App Development using Kotlin</p>
+      <p class="cert-org">IIT Bombay</p>
+    </div>
+    <div class="cert-card">
+      <span class="cert-icon">☁️</span>
+      <p class="cert-name">AWS Cloud Practitioner Essentials</p>
+      <p class="cert-org">Amazon Web Services</p>
+    </div>
+    <div class="cert-card">
+      <span class="cert-icon">🚀</span>
+      <p class="cert-name">Getting Started with Cloud Essentials</p>
+      <p class="cert-org">Amazon Web Services</p>
+    </div>
+    <div class="cert-card">
+      <span class="cert-icon">🐍</span>
+      <p class="cert-name">100 Days of Code: Python Pro Bootcamp</p>
+      <p class="cert-org">Dr. Angela Yu · Udemy</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec sec-peach" id="contact">
+  <div class="contact-inner">
+    <div class="sec-tag" style="justify-content:center">let's connect</div>
+    <h2>Get In Touch 💌</h2>
+    <p class="contact-sub">Open to developer and analyst roles. Whether you have an opportunity, a project, or just want to say hi — I'd love to hear from you!</p>
+    <div class="contact-cards">
+      <a href="mailto:ishaghag21@gmail.com" class="contact-card">
+        <span>✉️</span> ishaghag21@gmail.com
+      </a>
+      <a href="tel:9137702258" class="contact-card">
+        <span>📞</span> 9137702258
+      </a>
+      <a href="https://linkedin.com/in/ishaghag" target="_blank" class="contact-card">
+        <span>🔗</span> LinkedIn
+      </a>
+    </div>
+    <p class="contact-note">Based in Mumbai · Open to remote too 🌍</p>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Isha Sunil Ghag · Mumbai, Maharashtra</span>
+  <span class="footer-love">made with lots of ☕ & 💙</span>
+</footer>
+
+<script>
+// smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var id=this.getAttribute('href');
+    if(!id||id==='#')return;
+    var el=document.querySelector(id);
+    if(el){e.preventDefault();window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-68,behavior:'smooth'})}
+  });
+});
+// cursor
+var cur=document.getElementById('cursor');
+document.addEventListener('mousemove',function(e){cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.querySelectorAll('a,button').forEach(function(el){
+  el.addEventListener('mouseenter',function(){cur.style.transform='translate(-50%,-50%) scale(2.5)';cur.style.background='rgba(124,111,205,0.5)'});
+  el.addEventListener('mouseleave',function(){cur.style.transform='translate(-50%,-50%) scale(1)';cur.style.background='var(--coral)'});
+});
+</script>
+</body>
+</html>
