@@ -29,7 +29,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:va
 #projects,#about,#certifications,#contact{scroll-margin-top:68px}
 
 /* ── CURSOR DOT ── */
-.cursor{width:12px;height:12px;background:var(--coral);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s,background 0.2s;mix-blend-mode:multiply}
+.cursor{width:12px;height:12px;background:var(--coral);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s,background 0.2s;mix-blend-mode:multiply;opacity:0}
 
 /* ── NAV ── */
 nav{
@@ -216,7 +216,7 @@ h2{
 .proj-card:nth-child(2) .proj-tag{background:var(--mint);color:var(--green)}
 .proj-card:nth-child(3) .proj-tag{background:var(--peach);color:#C05C00}
 .proj-links{display:flex;gap:0.5rem;margin-top:1.25rem;flex-wrap:wrap}
-.proj-link{font-size:0.75rem;font-weight:600;padding:0.35rem 0.9rem;border-radius:99px;text-decoration:none;display:inline-flex;align-items:center;gap:0.35rem;border:1.5px solid var(--border);color:var(--ink-soft);background:white;transition:all 0.2s}
+.proj-link{font-size:0.75rem!important;font-weight:600;padding:0.35rem 0.9rem;border-radius:99px;text-decoration:none!important;display:inline-flex;align-items:center;gap:0.35rem;border:1.5px solid var(--border);color:var(--ink-soft)!important;background:white;transition:all 0.2s;cursor:pointer}
 .proj-link:hover{background:var(--ink);color:white;border-color:var(--ink);transform:translateY(-1px)}
 .proj-link-live{background:var(--ink);color:white;border-color:var(--ink)}
 .proj-link-live:hover{background:var(--purple);border-color:var(--purple)}
@@ -547,11 +547,11 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 });
 // cursor
 var cur=document.getElementById('cursor');
-document.addEventListener('mousemove',function(e){cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.addEventListener('mousemove',function(e){cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';cur.style.opacity='1'});
 document.querySelectorAll('a,button').forEach(function(el){
   el.addEventListener('mouseenter',function(){cur.style.transform='translate(-50%,-50%) scale(2.5)';cur.style.background='rgba(124,111,205,0.5)'});
   el.addEventListener('mouseleave',function(){cur.style.transform='translate(-50%,-50%) scale(1)';cur.style.background='var(--coral)'});
 });
 </script>
 </body>
-</ht
+</html>
