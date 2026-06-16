@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Isha Ghag ✦</title>
+<title>Isha Ghag Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -24,13 +24,13 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
- 
+
 /* smooth scroll offset */
 #projects,#about,#certifications,#contact{scroll-margin-top:68px}
- 
+
 /* ── CURSOR DOT ── */
- 
- 
+.cursor{width:12px;height:12px;background:var(--coral);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s,background 0.2s;mix-blend-mode:multiply}
+
 /* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
@@ -55,7 +55,7 @@ nav{
   transition:all 0.2s;
 }
 .nav-links a:hover{background:var(--pink);border-color:var(--coral);color:var(--ink)}
- 
+
 /* ── HERO ── */
 .hero{
   min-height:100vh;padding-top:68px;
@@ -71,7 +71,7 @@ nav{
 .blob3{width:220px;height:220px;background:var(--yellow);bottom:-40px;left:10%;animation:float1 8s ease-in-out infinite reverse}
 @keyframes float1{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-24px) rotate(5deg)}}
 @keyframes float2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(20px) rotate(-4deg)}}
- 
+
 .hero-content{position:relative;z-index:2;max-width:860px}
 .hero-badge{
   display:inline-flex;align-items:center;gap:0.5rem;
@@ -112,7 +112,7 @@ h1 .wave{display:inline-block;animation:wave 2.5s ease-in-out infinite}
   transition:all 0.2s;display:inline-block;
 }
 .btn-ghost:hover{background:white;border-color:var(--purple)}
- 
+
 .hero-stats{
   display:flex;gap:2.5rem;flex-wrap:wrap;
 }
@@ -122,14 +122,14 @@ h1 .wave{display:inline-block;animation:wave 2.5s ease-in-out infinite}
 }
 .hstat-n{font-family:'Fraunces',serif;font-weight:700;font-size:2rem;color:var(--ink);line-height:1}
 .hstat-l{font-size:0.72rem;color:var(--ink-soft);font-weight:500;margin-top:0.2rem}
- 
+
 /* deco hand-drawn circle on hero */
 .hero-deco{
   position:absolute;right:3rem;top:50%;transform:translateY(-50%);
   width:340px;height:340px;z-index:1;opacity:0.5;
 }
 @media(max-width:900px){.hero-deco{display:none}}
- 
+
 /* ── SKILLS BAND ── */
 .skills-band{
   background:var(--ink);padding:1.25rem 3rem;
@@ -147,14 +147,14 @@ h1 .wave{display:inline-block;animation:wave 2.5s ease-in-out infinite}
 .bt-lav{background:var(--lavender);color:var(--ink)}
 .bt-peach{background:var(--peach);color:var(--ink)}
 .bt-sky{background:var(--sky);color:var(--ink)}
- 
+
 /* ── SECTIONS ── */
 .sec{padding:6rem 3rem;border-top:2px solid var(--border)}
 .sec-pink{background:linear-gradient(135deg,#FFF5F7 0%,#FFF0F5 100%)}
 .sec-mint{background:linear-gradient(135deg,#F0FBF4 0%,#E8F8F0 100%)}
 .sec-lav{background:linear-gradient(135deg,#F5F3FF 0%,#EEF0FF 100%)}
 .sec-peach{background:linear-gradient(135deg,#FFF8F2 0%,#FFF3E8 100%)}
- 
+
 .sec-tag{
   display:inline-flex;align-items:center;gap:0.5rem;
   font-family:'Caveat',cursive;font-size:1.15rem;color:var(--purple);
@@ -166,13 +166,13 @@ h2{
   font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:-0.03em;
   color:var(--ink);line-height:1.05;margin-bottom:3rem;
 }
- 
+
 /* ── PROJECTS ── */
 .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .proj-card{
   background:white;border:2px solid var(--border);border-radius:20px;
   padding:2rem;transition:transform 0.2s,box-shadow 0.2s;
-  position:relative;overflow:hidden;cursor:pointer;
+  position:relative;overflow:hidden;cursor:default;
 }
 .proj-card::before{
   content:'';position:absolute;inset:0;opacity:0;transition:opacity 0.2s;
@@ -194,7 +194,7 @@ h2{
 }
 .proj-card:nth-child(2) .proj-tag{background:var(--mint);color:var(--green)}
 .proj-card:nth-child(3) .proj-tag{background:var(--peach);color:#C05C00}
- 
+
 /* ── ABOUT ── */
 .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .about-text{font-size:1rem;color:var(--ink-soft);line-height:1.85}
@@ -205,7 +205,7 @@ h2{
   margin-top:2rem;font-family:'Caveat',cursive;font-size:1.2rem;
   color:var(--ink);border-left:4px solid #F5C518;line-height:1.5;
 }
- 
+
 .edu-stack{display:flex;flex-direction:column;gap:1rem}
 .edu-card{
   background:white;border:2px solid var(--border);border-radius:16px;
@@ -221,7 +221,7 @@ h2{
   font-size:0.72rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;
 }
 .edu-score::before{content:'★';font-size:0.65rem}
- 
+
 /* ── CERTS ── */
 .certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .cert-card{
@@ -241,7 +241,7 @@ h2{
 .cert-icon{font-size:1.75rem;margin-bottom:0.6rem;display:block}
 .cert-name{font-size:0.88rem;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:0.25rem}
 .cert-org{font-size:0.75rem;color:var(--ink-soft)}
- 
+
 /* ── CONTACT ── */
 .contact-inner{max-width:680px;margin:0 auto;text-align:center}
 .contact-inner h2{margin-bottom:1rem}
@@ -260,7 +260,7 @@ h2{
 .contact-note{
   margin-top:2rem;font-family:'Caveat',cursive;font-size:1.15rem;color:var(--ink-soft);
 }
- 
+
 /* ── FOOTER ── */
 footer{
   background:var(--ink);color:rgba(255,255,255,0.45);
@@ -268,7 +268,7 @@ footer{
   font-size:0.8rem;flex-wrap:wrap;gap:1rem;
 }
 .footer-love{color:rgba(255,255,255,0.7);font-family:'Caveat',cursive;font-size:1rem}
- 
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .projects-grid{grid-template-columns:1fr 1fr}
@@ -291,9 +291,9 @@ footer{
 </style>
 </head>
 <body>
- 
- 
- 
+
+<div class="cursor" id="cursor"></div>
+
 <nav>
   <a href="#home" class="nav-logo"><span class="logo-dot"></span> Isha Ghag</a>
   <ul class="nav-links">
@@ -303,7 +303,7 @@ footer{
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
- 
+
 <!-- HERO -->
 <section class="hero" id="home">
   <svg class="hero-deco" viewBox="0 0 340 340" fill="none">
@@ -327,7 +327,10 @@ footer{
     <p class="hero-desc">I'm a CS postgraduate from Mumbai who loves building web apps and intelligent tools. Clean code, thoughtful interfaces, and problems worth solving — that's my thing.</p>
     <div class="hero-actions">
       <a href="#projects" class="btn-main">See my work ✦</a>
-      <a href="mailto:ishaghag21@gmail.com" class="btn-ghost">Say hello 💌</a>
+      <a href="https://github.com/ishaghag" target="_blank" class="btn-ghost">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:6px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+        GitHub
+      </a>
     </div>
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-n">8.39</div><div class="hstat-l">MSc CGPA</div></div>
@@ -337,7 +340,7 @@ footer{
     </div>
   </div>
 </section>
- 
+
 <!-- SKILLS BAND -->
 <div class="skills-band">
   <span class="band-label">My stack ✨</span>
@@ -354,13 +357,12 @@ footer{
     <span class="band-tag bt-sky">Java</span>
   </div>
 </div>
- 
+
 <!-- PROJECTS -->
 <section class="sec sec-lav" id="projects">
   <div class="sec-tag">what I've built</div>
   <h2>Projects 🛠️</h2>
   <div class="projects-grid">
-    <a href="https://text-summarizer-uypyb4gwncpuuctrngfzci.streamlit.app" target="_blank" style="text-decoration:none;color:inherit;display:block;">
     <div class="proj-card">
       <span class="proj-emoji">📄</span>
       <p class="proj-year">2025</p>
@@ -372,10 +374,7 @@ footer{
         <span class="proj-tag">spaCy</span>
         <span class="proj-tag">PDF Parsing</span>
       </div>
-      <p style="margin-top:1rem;font-size:0.75rem;color:var(--purple);font-weight:600;">↗ Open App</p>
     </div>
-    </a>
-    <a href="https://ishaghag.github.io/Chef-At-Home/" target="_blank" style="text-decoration:none;color:inherit;display:block;">
     <div class="proj-card">
       <span class="proj-emoji">🍳</span>
       <p class="proj-year">2024</p>
@@ -387,10 +386,7 @@ footer{
         <span class="proj-tag">HTML5</span>
         <span class="proj-tag">CSS3</span>
       </div>
-      <p style="margin-top:1rem;font-size:0.75rem;color:var(--green);font-weight:600;">↗ Open Project</p>
     </div>
-    </a>
-    <a href="https://www.ijrar.org/papers/IJRAR1ENP004.pdf" target="_blank" style="text-decoration:none;color:inherit;display:block;">
     <div class="proj-card">
       <span class="proj-emoji">🤖</span>
       <p class="proj-year">2025–2026</p>
@@ -401,12 +397,10 @@ footer{
         <span class="proj-tag">Edge Computing</span>
         <span class="proj-tag">IoT</span>
       </div>
-      <p style="margin-top:1rem;font-size:0.75rem;color:#C05C00;font-weight:600;">↗ Read Paper</p>
     </div>
-    </a>
   </div>
 </section>
- 
+
 <!-- ABOUT -->
 <section class="sec sec-pink" id="about">
   <div class="sec-tag">who I am</div>
@@ -455,7 +449,7 @@ footer{
     </div>
   </div>
 </section>
- 
+
 <!-- CERTIFICATIONS -->
 <section class="sec sec-mint" id="certifications">
   <div class="sec-tag">credentials</div>
@@ -493,7 +487,7 @@ footer{
     </div>
   </div>
 </section>
- 
+
 <!-- CONTACT -->
 <section class="sec sec-peach" id="contact">
   <div class="contact-inner">
@@ -514,12 +508,12 @@ footer{
     <p class="contact-note">Based in Mumbai · Open to remote too 🌍</p>
   </div>
 </section>
- 
+
 <footer>
   <span>© 2026 Isha Sunil Ghag · Mumbai, Maharashtra</span>
   <span class="footer-love">made with lots of ☕ & 💙</span>
 </footer>
- 
+
 <script>
 // smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
@@ -530,8 +524,13 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
     if(el){e.preventDefault();window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-68,behavior:'smooth'})}
   });
 });
- 
+// cursor
+var cur=document.getElementById('cursor');
+document.addEventListener('mousemove',function(e){cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.querySelectorAll('a,button').forEach(function(el){
+  el.addEventListener('mouseenter',function(){cur.style.transform='translate(-50%,-50%) scale(2.5)';cur.style.background='rgba(124,111,205,0.5)'});
+  el.addEventListener('mouseleave',function(){cur.style.transform='translate(-50%,-50%) scale(1)';cur.style.background='var(--coral)'});
+});
 </script>
 </body>
 </html>
- 
