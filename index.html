@@ -249,6 +249,24 @@ h2{
 .cert-icon{font-size:1.75rem;margin-bottom:0.6rem;display:block}
 .cert-name{font-size:0.88rem;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:0.25rem}
 .cert-org{font-size:0.75rem;color:var(--ink-soft)}
+.cert-card[data-img]{cursor:zoom-in}
+
+/* certificate popup */
+.lightbox{
+  position:fixed;inset:0;z-index:200;padding:2rem;
+  background:rgba(26,16,53,0.85);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;cursor:zoom-out;
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:100%;max-height:100%;border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);background:white;
+}
+.lightbox-close{
+  position:absolute;top:1.25rem;right:1.25rem;width:40px;height:40px;
+  border:none;border-radius:50%;background:var(--white);color:var(--ink);
+  font-size:1.1rem;cursor:pointer;
+}
 
 /* ── CONTACT ── */
 .contact-inner{max-width:680px;margin:0 auto;text-align:center}
@@ -265,6 +283,7 @@ h2{
 .contact-card:nth-child(1):hover{background:var(--pink);border-color:var(--coral)}
 .contact-card:nth-child(2):hover{background:var(--sky);border-color:#4AAFC9}
 .contact-card:nth-child(3):hover{background:var(--lavender);border-color:var(--purple)}
+.contact-card:nth-child(4):hover{background:var(--mint);border-color:var(--green)}
 .contact-note{
   margin-top:2rem;font-family:'Caveat',cursive;font-size:1.15rem;color:var(--ink-soft);
 }
@@ -340,6 +359,7 @@ footer{
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:6px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
         GitHub
       </a>
+      <a href="Isha Ghag..pdf" download class="btn-ghost">⬇ Resume</a>
     </div>
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-n">8.39</div><div class="hstat-l">MSc CGPA</div></div>
@@ -353,24 +373,24 @@ footer{
 <!-- SKILLS BAND -->
 <div class="skills-band">
   <span class="band-label">My stack ✨</span>
-    <div class="band-tags">
-      <span class="band-tag bt-pink">JavaScript (ES6+)</span>
-      <span class="band-tag bt-mint">Python</span>
-      <span class="band-tag bt-lav">Java</span>
-      <span class="band-tag bt-peach">HTML5 / CSS3</span>
-      <span class="band-tag bt-sky">React</span>
-      <span class="band-tag bt-pink">Node.js</span>
-      <span class="band-tag bt-mint">Express</span>
-      <span class="band-tag bt-lav">MongoDB</span>
-      <span class="band-tag bt-peach">REST APIs</span>
-      <span class="band-tag bt-sky">JWT</span>
-      <span class="band-tag bt-pink">NLP · NLTK · spaCy</span>
-      <span class="band-tag bt-mint">PDF Parsing</span>
-      <span class="band-tag bt-lav">AWS</span>
-      <span class="band-tag bt-peach">Git &amp; GitHub</span>
-      <span class="band-tag bt-sky">Postman</span>
-      <span class="band-tag bt-pink">VS Code</span>
-      <span class="band-tag bt-mint">Prompt Engineering</span>
+  <div class="band-tags">
+    <span class="band-tag bt-pink">JavaScript (ES6+)</span>
+    <span class="band-tag bt-mint">Python</span>
+    <span class="band-tag bt-lav">Java</span>
+    <span class="band-tag bt-peach">HTML5 / CSS3</span>
+    <span class="band-tag bt-sky">React</span>
+    <span class="band-tag bt-pink">Node.js</span>
+    <span class="band-tag bt-mint">Express</span>
+    <span class="band-tag bt-lav">MongoDB</span>
+    <span class="band-tag bt-peach">REST APIs</span>
+    <span class="band-tag bt-sky">JWT</span>
+    <span class="band-tag bt-pink">NLP · NLTK · spaCy</span>
+    <span class="band-tag bt-mint">PDF Parsing</span>
+    <span class="band-tag bt-lav">AWS</span>
+    <span class="band-tag bt-peach">Git &amp; GitHub</span>
+    <span class="band-tag bt-sky">Postman</span>
+    <span class="band-tag bt-pink">VS Code</span>
+    <span class="band-tag bt-mint">Prompt Engineering</span>
   </div>
 </div>
 
@@ -380,23 +400,22 @@ footer{
   <h2>Projects 🛠️</h2>
   <div class="projects-grid">
 
-    <!-- Splitzy: a div (not an <a>) because it has two separate links -->
     <a href="https://splitzy-blue.vercel.app/" target="_blank" style="text-decoration:none;color:inherit;">
-  <div class="proj-card">
-    <span class="proj-emoji">💸</span>
-    <p class="proj-year">2026</p>
-    <h3 class="proj-name">Splitzy</h3>
-    <p class="proj-desc">Splitzy is an expense-splitting app for groups. Add expenses, comment on them, and see who owes whom. Instead of everyone paying everyone back, its settlement logic cuts down the number of payments needed to clear all balances. Built with React, Node, Express and MongoDB, with JWT login.</p>
-    <div class="proj-tags">
-      <span class="proj-tag">React</span>
-      <span class="proj-tag">Node.js</span>
-      <span class="proj-tag">Express</span>
-      <span class="proj-tag">MongoDB</span>
-      <span class="proj-tag">JWT</span>
-    </div>
-    <p style="margin-top:1rem;font-size:0.75rem;color:var(--purple);font-weight:600;">↗ Open Project</p>
-  </div>
-</a>
+      <div class="proj-card">
+        <span class="proj-emoji">💸</span>
+        <p class="proj-year">2026</p>
+        <h3 class="proj-name">Splitzy</h3>
+        <p class="proj-desc">Splitzy is an expense-splitting app for groups. Add expenses, comment on them, and see who owes whom. Instead of everyone paying everyone back, its settlement logic cuts down the number of payments needed to clear all balances. Built with React, Node, Express and MongoDB, with JWT login.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">Node.js</span>
+          <span class="proj-tag">Express</span>
+          <span class="proj-tag">MongoDB</span>
+          <span class="proj-tag">JWT</span>
+        </div>
+        <p style="margin-top:1rem;font-size:0.75rem;color:var(--purple);font-weight:600;">↗ Open Project</p>
+      </div>
+    </a>
 
     <a href="https://text-summarizer-uypyb4gwncpuuctrngfzci.streamlit.app" target="_blank" style="text-decoration:none;color:inherit;">
       <div class="proj-card">
@@ -502,31 +521,33 @@ footer{
   <div class="sec-tag">credentials</div>
   <h2>Certifications 📜</h2>
   <div class="certs-grid">
-    <div class="cert-card">
+    <div class="cert-card" data-img="certs/fullstack-bootcamp.jpg">
       <span class="cert-icon">🌐</span>
       <p class="cert-name">The Complete Full Stack Web Development Bootcamp</p>
       <p class="cert-org">Dr. Angela Yu · Udemy</p>
     </div>
+    <!-- to make this card clickable later, add: data-img="certs/full-stack-sdac.jpg" -->
     <div class="cert-card">
       <span class="cert-icon">💻</span>
       <p class="cert-name">Full Stack Development</p>
       <p class="cert-org">SDAC</p>
     </div>
-    <div class="cert-card">
+    <div class="cert-card" data-img="certs/android-kotlin-iitb.jpg">
       <span class="cert-icon">📱</span>
       <p class="cert-name">Android App Development using Kotlin</p>
       <p class="cert-org">IIT Bombay</p>
     </div>
-    <div class="cert-card">
+    <div class="cert-card" data-img="certs/aws-cloud-practitioner.jpg">
       <span class="cert-icon">☁️</span>
       <p class="cert-name">AWS Cloud Practitioner Essentials</p>
       <p class="cert-org">Amazon Web Services</p>
     </div>
-    <div class="cert-card">
+    <div class="cert-card" data-img="certs/aws-cloud-essentials.jpg">
       <span class="cert-icon">🚀</span>
       <p class="cert-name">Getting Started with Cloud Essentials</p>
       <p class="cert-org">Amazon Web Services</p>
     </div>
+    <!-- to make this card clickable later, add: data-img="certs/python-100-days.jpg" -->
     <div class="cert-card">
       <span class="cert-icon">🐍</span>
       <p class="cert-name">100 Days of Code: Python Pro Bootcamp</p>
@@ -551,6 +572,9 @@ footer{
       <a href="https://linkedin.com/in/ishaghag" target="_blank" class="contact-card">
         <span>🔗</span> LinkedIn
       </a>
+      <a href="Isha Ghag..pdf" download class="contact-card">
+        <span>📄</span> Download Resume
+      </a>
     </div>
     <p class="contact-note">Based in Mumbai · Open to remote too 🌍</p>
   </div>
@@ -560,6 +584,12 @@ footer{
   <span>© 2026 Isha Sunil Ghag · Mumbai, Maharashtra</span>
   <span class="footer-love">made with lots of ☕ &amp; 💙</span>
 </footer>
+
+<!-- certificate popup -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
 <script>
 // smooth scroll
@@ -577,6 +607,20 @@ document.addEventListener('mousemove',function(e){cur.style.left=e.clientX+'px';
 document.querySelectorAll('a,button').forEach(function(el){
   el.addEventListener('mouseenter',function(){cur.style.transform='translate(-50%,-50%) scale(2.5)';cur.style.background='rgba(124,111,205,0.5)'});
   el.addEventListener('mouseleave',function(){cur.style.transform='translate(-50%,-50%) scale(1)';cur.style.background='var(--coral)'});
+});
+// certificate popup
+var lb=document.getElementById('lightbox');
+var lbImg=document.getElementById('lightbox-img');
+document.querySelectorAll('.cert-card[data-img]').forEach(function(card){
+  card.addEventListener('click',function(){
+    lbImg.src=this.getAttribute('data-img');
+    lbImg.alt='Certificate: '+this.querySelector('.cert-name').textContent;
+    lb.classList.add('open');
+  });
+});
+lb.addEventListener('click',function(){lb.classList.remove('open')});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')lb.classList.remove('open');
 });
 </script>
 </body>
