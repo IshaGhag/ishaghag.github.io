@@ -168,8 +168,12 @@ h2{
 }
 
 /* ── PROJECTS ── */
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+/* 2 columns so four cards sit in a clean 2x2 grid */
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+/* every grid child (div or a) stretches so cards in a row match height */
+.projects-grid > *{display:flex}
 .proj-card{
+  width:100%;
   background:white;border:2px solid var(--border);border-radius:20px;
   padding:2rem;transition:transform 0.2s,box-shadow 0.2s;
   position:relative;overflow:hidden;cursor:default;
@@ -178,9 +182,12 @@ h2{
   content:'';position:absolute;inset:0;opacity:0;transition:opacity 0.2s;
   border-radius:18px;
 }
-.proj-card:nth-child(1)::before{background:linear-gradient(135deg,rgba(255,214,224,0.4),rgba(221,214,243,0.4))}
-.proj-card:nth-child(2)::before{background:linear-gradient(135deg,rgba(200,240,220,0.4),rgba(200,230,245,0.4))}
-.proj-card:nth-child(3)::before{background:linear-gradient(135deg,rgba(255,229,204,0.4),rgba(255,243,176,0.4))}
+/* colours are keyed to the grid child, not .proj-card,
+   because each card is wrapped in its own <a> or <div> */
+.projects-grid > *:nth-child(1) .proj-card::before{background:linear-gradient(135deg,rgba(255,214,224,0.4),rgba(221,214,243,0.4))}
+.projects-grid > *:nth-child(2) .proj-card::before{background:linear-gradient(135deg,rgba(200,240,220,0.4),rgba(200,230,245,0.4))}
+.projects-grid > *:nth-child(3) .proj-card::before{background:linear-gradient(135deg,rgba(255,229,204,0.4),rgba(255,243,176,0.4))}
+.projects-grid > *:nth-child(4) .proj-card::before{background:linear-gradient(135deg,rgba(200,230,245,0.4),rgba(221,214,243,0.4))}
 .proj-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(26,16,53,0.12)}
 .proj-card:hover::before{opacity:1}
 .proj-emoji{font-size:2.5rem;margin-bottom:1rem;display:block}
@@ -192,8 +199,9 @@ h2{
   font-size:0.7rem;font-weight:600;padding:0.2rem 0.65rem;
   border-radius:99px;background:var(--lavender);color:var(--purple);
 }
-.proj-card:nth-child(2) .proj-tag{background:var(--mint);color:var(--green)}
-.proj-card:nth-child(3) .proj-tag{background:var(--peach);color:#C05C00}
+.projects-grid > *:nth-child(2) .proj-tag{background:var(--mint);color:var(--green)}
+.projects-grid > *:nth-child(3) .proj-tag{background:var(--peach);color:#C05C00}
+.projects-grid > *:nth-child(4) .proj-tag{background:var(--sky);color:#1F6F8B}
 
 /* ── ABOUT ── */
 .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
@@ -271,15 +279,16 @@ footer{
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
-  .projects-grid{grid-template-columns:1fr 1fr}
   .about-layout{grid-template-columns:1fr;gap:3rem}
   .certs-grid{grid-template-columns:1fr 1fr}
   .sec{padding:4rem 2rem}
   nav{padding:0 1.5rem}
 }
+@media(max-width:700px){
+  .projects-grid{grid-template-columns:1fr}
+}
 @media(max-width:600px){
   .nav-links a span{display:none}
-  .projects-grid{grid-template-columns:1fr}
   .certs-grid{grid-template-columns:1fr}
   h1{font-size:3rem}
   .hero{padding-left:1.5rem;padding-right:1.5rem}
@@ -310,7 +319,7 @@ footer{
     <ellipse cx="170" cy="170" rx="150" ry="150" stroke="rgba(124,111,205,0.3)" stroke-width="2.5" stroke-dasharray="12 8"/>
     <ellipse cx="170" cy="170" rx="110" ry="110" stroke="rgba(255,143,163,0.4)" stroke-width="2"/>
     <circle cx="170" cy="170" r="60" fill="rgba(255,255,255,0.35)" stroke="rgba(124,111,205,0.2)" stroke-width="2"/>
-    <text x="170" y="158" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="rgba(26,16,53,0.5)" font-style="italic">code &</text>
+    <text x="170" y="158" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="rgba(26,16,53,0.5)" font-style="italic">code &amp;</text>
     <text x="170" y="184" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="rgba(26,16,53,0.5)" font-style="italic">create</text>
     <circle cx="60" cy="80" r="8" fill="rgba(255,214,224,0.8)" stroke="rgba(255,143,163,0.5)" stroke-width="1.5"/>
     <circle cx="290" cy="260" r="6" fill="rgba(200,240,220,0.8)" stroke="rgba(61,153,112,0.5)" stroke-width="1.5"/>
@@ -323,7 +332,7 @@ footer{
   <div class="hero-content">
     <div class="hero-badge"><span></span> Open to opportunities · Mumbai</div>
     <h1>Hi, I'm Isha <span class="wave">👋</span></h1>
-    <p class="hero-subtitle">Full-Stack Developer & NLP Enthusiast</p>
+    <p class="hero-subtitle">Full-Stack Developer &amp; NLP Enthusiast</p>
     <p class="hero-desc">I'm a CS postgraduate from Mumbai who loves building web apps and intelligent tools. Clean code, thoughtful interfaces, and problems worth solving — that's my thing.</p>
     <div class="hero-actions">
       <a href="#projects" class="btn-main">See my work ✦</a>
@@ -336,7 +345,7 @@ footer{
       <div class="hstat"><div class="hstat-n">8.39</div><div class="hstat-l">MSc CGPA</div></div>
       <div class="hstat"><div class="hstat-n">9.00</div><div class="hstat-l">BSc CGPA</div></div>
       <div class="hstat"><div class="hstat-n">6</div><div class="hstat-l">Certifications</div></div>
-      <div class="hstat"><div class="hstat-n">2</div><div class="hstat-l">Projects</div></div>
+      <div class="hstat"><div class="hstat-n">3</div><div class="hstat-l">Projects</div></div>
     </div>
   </div>
 </section>
@@ -351,7 +360,7 @@ footer{
     <span class="band-tag bt-peach">HTML5 / CSS3</span>
     <span class="band-tag bt-sky">NLP · spaCy</span>
     <span class="band-tag bt-pink">AWS</span>
-    <span class="band-tag bt-mint">Git & GitHub</span>
+    <span class="band-tag bt-mint">Git &amp; GitHub</span>
     <span class="band-tag bt-lav">MERN Stack</span>
     <span class="band-tag bt-peach">Kotlin</span>
     <span class="band-tag bt-sky">Java</span>
@@ -363,50 +372,75 @@ footer{
   <div class="sec-tag">what I've built</div>
   <h2>Projects 🛠️</h2>
   <div class="projects-grid">
-    <a href="https://text-summarizer-uypyb4gwncpuuctrngfzci.streamlit.app" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-    <div class="proj-card">
-      <span class="proj-emoji">📄</span>
-      <p class="proj-year">2025</p>
-      <h3 class="proj-name">Text Summarizer</h3>
-      <p class="proj-desc">NLP-powered tool that condenses long documents, PDFs, and webpages into crisp summaries. Uses extractive techniques to keep what matters — cuts reading time by ~70%.</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Python</span>
-        <span class="proj-tag">NLTK</span>
-        <span class="proj-tag">spaCy</span>
-        <span class="proj-tag">PDF Parsing</span>
+
+    <!-- Splitzy: a div (not an <a>) because it has two separate links -->
+    <div>
+      <div class="proj-card">
+        <span class="proj-emoji">💸</span>
+        <p class="proj-year">2026</p>
+        <h3 class="proj-name">Splitzy</h3>
+        <p class="proj-desc">Splitzy is an expense-splitting app for groups. Add expenses, comment on them, and see who owes whom. Instead of everyone paying everyone back, its settlement logic cuts down the number of payments needed to clear all balances. Built with React, Node, Express and MongoDB, with JWT login.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">Node.js</span>
+          <span class="proj-tag">Express</span>
+          <span class="proj-tag">MongoDB</span>
+          <span class="proj-tag">JWT</span>
+        </div>
+        <p style="margin-top:1rem;font-size:0.75rem;font-weight:600;display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="https://splitzy-blue.vercel.app/" target="_blank" style="color:var(--purple);">↗ Live app</a>
+          <a href="https://github.com/IshaGhag/splitzy" target="_blank" style="color:var(--purple);">↗ GitHub</a>
+        </p>
       </div>
-      <p style="margin-top:1rem;font-size:0.75rem;color:var(--purple);font-weight:600;">↗ Open App</p>
     </div>
-    </a>
-    <a href="https://ishaghag.github.io/Chef-At-Home/" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-    <div class="proj-card">
-      <span class="proj-emoji">🍳</span>
-      <p class="proj-year">2024</p>
-      <h3 class="proj-name">Chef At Home</h3>
-      <p class="proj-desc">Recipe search & meal-planning web app with dynamic ingredient scaling by serving size. Fully responsive, step-by-step instructions — built in pure Vanilla JS, no frameworks.</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Vanilla JS</span>
-        <span class="proj-tag">Fetch API</span>
-        <span class="proj-tag">HTML5</span>
-        <span class="proj-tag">CSS3</span>
+
+    <a href="https://text-summarizer-uypyb4gwncpuuctrngfzci.streamlit.app" target="_blank" style="text-decoration:none;color:inherit;">
+      <div class="proj-card">
+        <span class="proj-emoji">📄</span>
+        <p class="proj-year">2025</p>
+        <h3 class="proj-name">Text Summarizer</h3>
+        <p class="proj-desc">NLP-powered tool that condenses long documents, PDFs, and webpages into crisp summaries. Uses extractive techniques to keep what matters — cuts reading time by ~70%.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">NLTK</span>
+          <span class="proj-tag">spaCy</span>
+          <span class="proj-tag">PDF Parsing</span>
+        </div>
+        <p style="margin-top:1rem;font-size:0.75rem;color:var(--green);font-weight:600;">↗ Open App</p>
       </div>
-      <p style="margin-top:1rem;font-size:0.75rem;color:var(--green);font-weight:600;">↗ Open Project</p>
-    </div>
     </a>
-    <a href="https://www.ijrar.org/papers/IJRAR1ENP004.pdf" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-    <div class="proj-card">
-      <span class="proj-emoji">🤖</span>
-      <p class="proj-year">2025–2026</p>
-      <h3 class="proj-name">Edge AI Research</h3>
-      <p class="proj-desc">Academic research on running ML inference at edge devices — reducing latency and cloud dependency for IoT & real-time applications. Explored model-size vs accuracy tradeoffs.</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Machine Learning</span>
-        <span class="proj-tag">Edge Computing</span>
-        <span class="proj-tag">IoT</span>
+
+    <a href="https://ishaghag.github.io/Chef-At-Home/" target="_blank" style="text-decoration:none;color:inherit;">
+      <div class="proj-card">
+        <span class="proj-emoji">🍳</span>
+        <p class="proj-year">2024</p>
+        <h3 class="proj-name">Chef At Home</h3>
+        <p class="proj-desc">Recipe search &amp; meal-planning web app with dynamic ingredient scaling by serving size. Fully responsive, step-by-step instructions — built in pure Vanilla JS, no frameworks.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Vanilla JS</span>
+          <span class="proj-tag">Fetch API</span>
+          <span class="proj-tag">HTML5</span>
+          <span class="proj-tag">CSS3</span>
+        </div>
+        <p style="margin-top:1rem;font-size:0.75rem;color:#C05C00;font-weight:600;">↗ Open Project</p>
       </div>
-      <p style="margin-top:1rem;font-size:0.75rem;color:#C05C00;font-weight:600;">↗ Read Paper</p>
-    </div>
     </a>
+
+    <a href="https://www.ijrar.org/papers/IJRAR1ENP004.pdf" target="_blank" style="text-decoration:none;color:inherit;">
+      <div class="proj-card">
+        <span class="proj-emoji">🤖</span>
+        <p class="proj-year">2025–2026</p>
+        <h3 class="proj-name">Edge AI Research</h3>
+        <p class="proj-desc">Academic research on running ML inference at edge devices — reducing latency and cloud dependency for IoT &amp; real-time applications. Explored model-size vs accuracy tradeoffs.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Machine Learning</span>
+          <span class="proj-tag">Edge Computing</span>
+          <span class="proj-tag">IoT</span>
+        </div>
+        <p style="margin-top:1rem;font-size:0.75rem;color:#1F6F8B;font-weight:600;">↗ Read Paper</p>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -520,7 +554,7 @@ footer{
 
 <footer>
   <span>© 2026 Isha Sunil Ghag · Mumbai, Maharashtra</span>
-  <span class="footer-love">made with lots of ☕ & 💙</span>
+  <span class="footer-love">made with lots of ☕ &amp; 💙</span>
 </footer>
 
 <script>
